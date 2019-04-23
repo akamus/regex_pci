@@ -9,19 +9,20 @@ use Package\Model;
 class Controller {
 
     public $regex = '';
+    public $paginar = '';
     
     public function __construct() {
 
         $this->regex = new \Package\Model;
-        
+        $this->paginar = 10; //paginar de até 10
     }
     
     public function processar($filtros = []) {
         if(empty($filtros)){            
-        $filtros = ['java', '2008'];
+        $filtros = ['java', ''];
         }
         
-        var_dump($filtros);
+       // var_dump($filtros);
         
         $urlPadrao = $this->regex->setUrlParaBuscarComFiltro($filtros[0]);
 
@@ -29,6 +30,13 @@ class Controller {
 
         $quantidadeDePaginas = $this->regex->getQuantidadeDePaginasEncontradas($html);
 
+            if($quantidadeDePaginas > 15){
+                $quantidadeDePaginas = $this->paginar;
+            }
+
+
+
+        //$this->regex->print_log('tste');
 // BUSCA DE URLS PRIMEIRO FILTRO - > cargo exemplo
 
         $_urlsParaBuscarZip = [];
@@ -50,14 +58,14 @@ class Controller {
             exit();
         }
 
-       
+       echo "paginação finalizada<br/>";
 
 // MOSTRAR URLS ZIP
 
         $listaZipFinal = $this->regex->buscarLinkZip($listaUrlAposFiltroAno);
 
        // var_dump($listaZipFinal);
-        echo '******* Copie e cole em um Gerenciador de Download!!! ****** <br/><br/>';
+        echo '******* Copie e cole em um Gerenciador de Download!!! ******   Encontrados: '.count($listaZipFinal).' <br/><br/>';
     
       $this->regex->print_array($listaZipFinal);
 

@@ -3,7 +3,7 @@
 namespace Package;
 
 //set_time_limit(0);
-ini_set('max_execution_time', 300); //300 seconds = 5 minutes
+ini_set('max_execution_time', 700); //300 seconds = 5 minutes
 
 define('URL_PROVA', 'https://www.pciconcursos.com.br/provas/');
 define('URL_ZIP_FILE', 'https://www.pciconcursos.com.br/provas/download/');
@@ -174,6 +174,7 @@ class Model {
 
         //buscar links em paginação 
 
+
         for ($index = 2; $index <= $quantidadeDePaginas; $index++) {
             //definir paginação 
             $urlPage = $url . '/' . $index;
@@ -235,7 +236,7 @@ class Model {
 
                
                   
-                    $filtrar = $this->regex->getLinkFiltro($url,$filtro);
+                    $filtrar = $this->getLinkFiltro($url,$filtro);
                   
                     if($filtrar){
                         
@@ -252,6 +253,8 @@ class Model {
            
         }
    
+       // var_dump($_listaNegada);
+
         return $_listaUrlsFinalZip;
         }
     
@@ -281,6 +284,14 @@ class Model {
         foreach ($array as $value) {
             echo $value . '<br/>';
         }
+    }
+
+    function print_log($valor,$label = ''){
+        if(empty($label)){
+            $label = 'valor:';
+        }
+
+        echo "<script>console.log(".$label." => ".$valor.")</script>";
     }
 
 }
