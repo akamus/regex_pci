@@ -18,6 +18,16 @@ exemplo:
 ['java','2014']
 
 
+#busca que demora mais
+
+['fcc','']
+['tre','']
+['banco-de-dados','']
+['tecnologia-da-informacao','']
+['java','']
+
+
+
 
 
 # basta executar no navegador [url]/public ou [url]/public/index.php
