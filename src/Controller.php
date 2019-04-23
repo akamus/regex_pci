@@ -21,7 +21,7 @@ class Controller {
         $filtros = ['java', '2008'];
         }
         
-        print_r($filtros);
+        var_dump($filtros);
         
         $urlPadrao = $this->regex->setUrlParaBuscarComFiltro($filtros[0]);
 
@@ -57,7 +57,7 @@ class Controller {
         $listaZipFinal = $this->regex->buscarLinkZip($listaUrlAposFiltroAno);
 
        // var_dump($listaZipFinal);
-        echo 'Copie e cole em um Gerenciador de Download!!!<br/><br/>';
+        echo '******* Copie e cole em um Gerenciador de Download!!! ****** <br/><br/>';
     
       $this->regex->print_array($listaZipFinal);
 
