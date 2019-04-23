@@ -1,0 +1,25 @@
+{
+    "name": "vendor/teste",
+    "description": "Descrição do projeto teste.",
+    
+    "authors": [
+        {
+            "name": "aureo.ramos",
+            "email": "your@email.here"
+        }
+    ],
+    
+    "require": {},
+    
+    "require-dev": {
+       "codeception/codeception": "*"
+       
+ 
+    },
+      
+    "autoload": {
+       "psr-4": {
+            "Package\\":  "src/"
+           }
+       }
+}
