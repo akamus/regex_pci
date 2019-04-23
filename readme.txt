@@ -6,7 +6,7 @@
 
 
 
-# insira 2 filtros na pagina index.php 
+# insira 2 filtros na pagina index.php via código. Não possui front
 # sendo cargo ou tribunal ou organizadora ou disciplina , e o ano.
 exemplo:
 #texto separado por hífen e em letra minúscula
