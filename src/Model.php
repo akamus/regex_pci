@@ -3,7 +3,7 @@
 namespace Package;
 
 //set_time_limit(0);
-ini_set('max_execution_time', 700); //300 seconds = 5 minutes
+ini_set('max_execution_time', 300); //300 seconds = 5 minutes
 
 define('URL_PROVA', 'https://www.pciconcursos.com.br/provas/');
 define('URL_ZIP_FILE', 'https://www.pciconcursos.com.br/provas/download/');
@@ -241,7 +241,8 @@ class Model {
                         
                     array_push($_listaUrlsFinalZip, $url);
                     
-                     }else{                    
+                     }else{ 
+                                        
                     array_push($_listaNegada, $url);
      
                     }

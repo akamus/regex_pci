@@ -58,7 +58,8 @@ class Controller {
 
        // var_dump($listaZipFinal);
         echo 'Copie e cole em um Gerenciador de Download!!!<br/><br/>';
-        $this->regex->print_array($listaZipFinal);
+    
+      $this->regex->print_array($listaZipFinal);
 
     }
 
